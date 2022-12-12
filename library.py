@@ -20,7 +20,7 @@ except FileNotFoundError:
 """
 i = "x"
 while i == 0:
-    print("Welcome to my library program!\n1 Overview\n2 Manage Books\n3 Manage members")
+    print(" Welcome to my library program!\n1 Overview\n2 Manage Books\n3 Manage members")
 
 # NEXT CHANGE: Checks if data file is ok and tells the user
 
