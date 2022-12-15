@@ -3,33 +3,46 @@ import os
 def cls():
     os.system('cls')
 cls()
-
 memberspath = ((os.path.dirname(__file__)) + "\data\members.txt")
 bookspath = ((os.path.dirname(__file__)) + "\data\\books.txt")
+path = ((os.path.dirname(__file__)) + "\data")
 
 # memberspath
 try:
-    with open('path' , 'r') as f:
-        memberspath = f.readlines()
-except FileNotFoundError:
-    print("Data for not found, made a new data file")
-    open(memberspath , 'w')
-# bookspath
+    print("Creating path...")
+    os.mkdir(path)
+except FileExistsError:
+    print("Path already exists!")
 try:
-    with open('path' , 'r') as f:
-        bookspath = f.readlines()
+    with open(memberspath , 'r') as f:
+        members = f.readlines
+        print("wut")
 except FileNotFoundError:
-    print("Data for books not found, made a new data file")
-    open(bookspath , 'w')
-# phrase.replace("Giraffe", "Elephant")
-
+    print("Members data not found, made a new data file")
+    open(memberspath , 'w')
+        
+# bookspath , needs edit
+"""
+try:
+    print("Creating path...")
+    os.mkdir(path)
+except FileExistsError:
+    print("Path already exists!")
+try:
+    with open(memberspath , 'r') as f:
+        members = f.readlines
+        print("wut")
+except FileNotFoundError:
+    print("Members data not found, made a new data file")
+    open(memberspath , 'w')
+"""
 
 # ................................................................................................................................
 
 # add book/person to list
 """
 i = 1
-bookspath = []
+books = []
 while i != 0:
     x = input("\n")
     if x == "0":
@@ -53,9 +66,10 @@ i = input("\n\nEnter a number to continue: ")
 
 while int(i) != 0:
     if int(i) == 1:
-        print("Overview")
+        # print("Overview")
+        pass
     if int(i) == 2:
         pass
-
+cls()
 
 
