@@ -65,7 +65,27 @@ while i0 != 0:
                     file.close()
                     input("Done! Press enter to continue")
             elif i3 == 3:
-                pass
+                cls()
+                members = []
+                with open(memberspath) as file: 
+                    for line in file: 
+                        members.append(line.rstrip())
+                x = int(0)
+                while x == 0:
+                    memberremove = str(input("Enter the name or enter 0 to cancel: "))
+                    if memberremove == str(0):
+                        x = int(1)
+                    else:
+                        try:
+                            members.remove(memberremove)
+                            x = int(1)
+                            file = open(memberspath,'w')
+                            for member in members:
+                                file.write(member + "\n")
+                            file.close()
+                            input("\nDone! Press enter to continue")
+                        except ValueError:
+                            print("Member not found")
             elif i3 == 0:
                 i0 = ()
                 pass
@@ -74,7 +94,8 @@ while i0 != 0:
                 menu3()
                 i2 = int(input("\nInvalid number! Enter again: "))
     elif i0 == 0:
-        cls
+        cls()
+        print("Thanks for using the program!\n")
     else:
         menu0()
         i0 = int(input("\nInvalid number! Enter again: "))
